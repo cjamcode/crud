@@ -1,5 +1,9 @@
 <?php
 
+/**
+ *  Este archivo contiene la conexion con la base de datos
+ */
+
 class Connection{
     public static function Connection(){
         try {
