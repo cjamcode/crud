@@ -43,7 +43,7 @@ class Model{
         return $this->result;
     }
 
-    public function select_count($table){
+    public function amoung_employees($table){
         $query = "SELECT COUNT(*) from {$table}";
 
         $stmt = $this->con->prepare($query);
@@ -52,6 +52,18 @@ class Model{
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
         return $row["COUNT(*)"];
+    }
+
+    public function select_employee($table, $id){
+        $query = "SELECT * FROM {$table} WHERE id = :id";
+
+        $stmt = $this->con->prepare($query);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $row;
     }
 
     public function insert_into($table, $name, $lastname, $email, $gender, $country, $job){

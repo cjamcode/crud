@@ -28,7 +28,9 @@ require("./View/Templates/add_employee.php");
                 <th><?= $data_row[$key]["gender"] ?></th>
                 <th><?= $data_row[$key]["country"] ?></th>
                 <th><?= $data_row[$key]["job_title"] ?></th>
-                <th><a class="btn btn-warning" href="#"><i class="bi bi-pencil-square"></i></a><a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a></th>
+                <th><a class="btn btn-warning" href="?view=update&id=<?=$data_row[$key]["id"]?>"><i class="bi bi-pencil-square"></i></a>
+                    <a class="btn btn-danger" href="?view=delete&id=<?=$data_row[$key]["id"]?>"><i class="bi bi-trash3"></i></a>
+                </th>
             </tr>
         <?php endforeach; ?>
     </tbody>
